@@ -14,6 +14,9 @@ var testimonialCards = document.querySelectorAll(".testimonial-card");
 var nextBtn = document.getElementById("next-testimonial");
 var prevBtn = document.getElementById("prev-testimonial");
 var indicator = document.querySelectorAll(".carousel-indicator");
+var menuBtn = document.querySelector(".mobile-menu-btn");
+var resetBtn = document.getElementById("reset-settings");
+
 // !================================ ScrollSpy ==========================================
 
 window.addEventListener("scroll", scrollSpy);
@@ -169,6 +172,47 @@ if (savedPrimary && savedSecondary) {
   });
 }
 
+
+// !================================ Reset Btn =============================================
+
+resetBtn.addEventListener("click", function () {
+  var firstColorBtn = colorBtn[0];
+  var primary = firstColorBtn.dataset.primary;
+  var secondary = firstColorBtn.dataset.secondary;
+  document.documentElement.style.setProperty("--color-primary", primary);
+  document.documentElement.style.setProperty("--color-secondary", secondary);
+
+  colorBtn.forEach(function (btn) {
+    btn.classList.remove(
+      "ring-2",
+      "ring-primary",
+      "ring-offset-2",
+      "ring-offset-white",
+      "dark:ring-offset-slate-900"
+    );
+  });
+  firstColorBtn.classList.add(
+    "ring-2",
+    "ring-primary",
+    "ring-offset-2",
+    "ring-offset-white",
+    "dark:ring-offset-slate-900"
+  );
+  body.classList.remove("font-cairo", "font-alexandria", "font-tajawal");
+  body.classList.add("font-tajawal");
+  fontsBtn.forEach(function (btn) {
+    if (btn.dataset.font === "tajawal") {
+      btn.classList.add("active");
+    } else {
+      btn.classList.remove("active");
+    }
+  });
+
+  localStorage.setItem("font" , "tajawal")
+  localStorage.setItem("primary" , "#6366f1")
+  localStorage.setItem("secondary" , "#8b5cf6")
+});
+
 // !================================ scrollToTopBtn ==========================================
 
 scrollToTopBtn.addEventListener("click", function () {
@@ -292,3 +336,11 @@ indicator.forEach(function (btn) {
   });
 });
 console.log(testimonialCards.length);
+
+// !================================ Mobile Menu ==========================================
+
+navLinks = document.querySelector(".nav-links");
+
+menuBtn.addEventListener("click", function () {
+  navLinks.classList.toggle("active");
+});
