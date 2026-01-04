@@ -339,8 +339,6 @@ console.log(testimonialCards.length);
 
 // !================================ Mobile Menu ==========================================
 
-navLinks = document.querySelector(".nav-links");
-
 menuBtn.addEventListener("click", function () {
   navLinks.classList.toggle("active");
 });
