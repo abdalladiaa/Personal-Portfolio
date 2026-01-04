@@ -16,6 +16,7 @@ var prevBtn = document.getElementById("prev-testimonial");
 var indicator = document.querySelectorAll(".carousel-indicator");
 var menuBtn = document.querySelector(".mobile-menu-btn");
 var resetBtn = document.getElementById("reset-settings");
+var navLinksContainer = document.querySelector(".nav-links");
 
 // !================================ ScrollSpy ==========================================
 
@@ -340,5 +341,6 @@ console.log(testimonialCards.length);
 // !================================ Mobile Menu ==========================================
 
 menuBtn.addEventListener("click", function () {
-  navLinks.classList.toggle("active");
+  navLinksContainer.classList.toggle("active");
 });
+
