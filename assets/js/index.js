@@ -336,7 +336,6 @@ indicator.forEach(function (btn) {
     slideCards();
   });
 });
-console.log(testimonialCards.length);
 
 // !================================ Mobile Menu ==========================================
 
@@ -344,3 +343,5 @@ menuBtn.addEventListener("click", function () {
   navLinksContainer.classList.toggle("active");
 });
 
+
+console.log(true + true + true * 3);
