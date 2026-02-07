@@ -319,7 +319,6 @@ nextBtn.addEventListener("click", function () {
     currentIndex = 0;
   }
   slideCards();
-  console.log(currentIndex);
 });
 prevBtn.addEventListener("click", function () {
   currentIndex--;
@@ -327,7 +326,6 @@ prevBtn.addEventListener("click", function () {
     currentIndex = maxIndex;
   }
   slideCards();
-  console.log(currentIndex);
 });
 
 indicator.forEach(function (btn) {
@@ -344,4 +342,4 @@ menuBtn.addEventListener("click", function () {
 });
 
 
-console.log(true + true + true * 3);
+
